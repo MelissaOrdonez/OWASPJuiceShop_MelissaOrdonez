@@ -34,10 +34,8 @@ submitButton.addEventListener('click', async function(){
     });
 
     const data = await response.json();
-    if (data.role === "admin") {
-        result.textContent = "Welcome Admin!";
-    } else if (data.role === "user") {
-        result.textContent = "Welcome User!";
+    if (data.role === "admin" || data.role === "user") {
+        result.textContent = "Welcome " + emailValue;
     } else {
         result.textContent = "Invalid User";
     }
